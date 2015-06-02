@@ -1,0 +1,34 @@
+<%= form_for(@product_review) do |f| %>
+  <% if @product_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_review.errors.count, "error") %> prohibited this product_review from being saved:</h2>
+
+      <ul>
+      <% @product_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <label for="txtName" class="heading-5">Rate us between 1 to 5</label>
+      <span class="star-rating">
+      <% (1..5).each do |i| %>
+        <%= radio_button_tag("product_review[rating]", i) %><i></i>
+      <%end%>
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="txtName" class="heading-5">Write us Review</label>
+    <%= text_area_tag('product_review[review]', nil, {class:'form-control', style: 'width: 425px; height: 170px;'})%>
+  </div>
+
+
+  <%= f.hidden_field :product_id %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

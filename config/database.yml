@@ -1,0 +1,50 @@
+# For postgres
+#   Ensure the pg gem is defined in your Gemfile
+#   gem 'pg'
+#  also you need to create database 'review_development' to run application in development env.
+#
+#################### to use postgres uncomment bellow section and comment out sqlite section ############
+
+#default: &default
+#  adapter: postgresql
+#  encoding: unicode
+#  pool: 5
+#  username: postgres
+#
+#development:
+#  <<: *default
+#  database: review_development
+#
+#test:
+#  <<: *default
+#  database: review_test
+#
+#production:
+#  <<: *default
+#  database: review_production
+
+
+# SQLite version 3.x
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+#################### to use sqlite uncomment bellow section and comment out postgres section ############
+
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/development.sqlite3
+
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
+

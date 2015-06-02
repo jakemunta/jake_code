@@ -1,0 +1,57 @@
+<style type="text/css">
+  .stars, .stars0
+  {
+    background: transparent url("/assets/stars.png") top left;
+    width:100px;
+    height:20px;
+    float:left;
+    display:block;
+  }
+  .stars1 {background-position:20px;}
+  .stars2 {background-position:40px;}
+  .stars3 {background-position:60px;}
+  .stars4 {background-position:80px;}
+  .stars45 {background-position:90px;}
+  .stars5 {background-position:100px;}
+  .reviewBy{
+    float: right;
+    color: #800000;
+  }
+  .reviewText{
+    margin-left: 10px;
+    width: 500px;
+    float: left;
+    font-family: serif;
+  }
+  .smallGreyText{
+    margin-left: 10px;
+    width: 110px;
+    color: #A9A9A9;
+    font-size: 0.85em;
+  }
+</style>
+
+<div class="container">
+  <div class="heading-4" style="font-style: italic;">Customer Reviews</div>
+  <table class="table table-hover">
+    <% product_reviews.each do |product_review|%>
+      <tr>
+        <td>
+          <div class="row">
+          <div class="col-xs-4 stars stars<%=product_review.rating%>"></div></div>
+          <div class="row">
+          <div class="text-center"><small><%= product_review.created_at.to_date%></small></div></div>
+        </td>
+        <td>
+          <div class="row">
+            <div class="col-xs-4"><strong><%= ProductReview::RATING[product_review.rating]%></strong></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-8"><%=product_review.review%></div>
+          </div>
+        </td>
+      </tr>
+    <%end%>
+  </table>
+</div>
+<div class="clearfix"></div>

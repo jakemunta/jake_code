@@ -1,0 +1,6 @@
+$(document).ready(function() {
+  $('#showReview').empty();
+  $('#showReview').html("<%= escape_javascript(render(:partial => "products/review", locals: { :product_reviews => @product.product_reviews })) %>");
+  $("#new_product_review")[0].reset();
+});
+
