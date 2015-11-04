@@ -1,0 +1,236 @@
+﻿<section>
+    <form role="form">
+        <fieldset>
+            <div class="row">
+                <div class="col-lg-6">
+                    <label for="clientId">Client ID</label>
+                    <input type="text" class="form-control" id="clientId" data-bind="value: clientId">
+                </div>
+                <div class="col-lg-6">
+                    <label for="dob">Date of birth</label>
+                    <input type="text" class="form-control" id="dob" data-bind="value: dateOfBirth">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname" data-bind="value: firstName">
+                </div>
+                <div class="col-lg-4">
+                    <label for="mname">Middle Name</label>
+                    <input type="text" class="form-control" id="mname" data-bind="value: middleName">
+                </div>
+                <div class="col-lg-4">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" id="lname" data-bind="value: lastName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10">
+                    <label for="saddress">Street Address</label>
+                    <input type="text" class="form-control" id="saddress" data-bind="value: streetAddress">
+                </div>
+                <div class="col-lg-2">
+                    <label for="aptno">Apt.</label>
+                    <input type="text" class="form-control" id="aptno" data-bind="value: appartmentNo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <label for="zone">Zone</label>
+                    <select class="form-control" id="lstZones" name="lstZones" data-bind="options: lstZones,
+                           value: zone,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" id="city" data-bind="value: city">
+                </div>
+                <div class="col-lg-3">
+                    <label for="zip">Zipcode</label>
+                    <input type="text" class="form-control" id="zip" data-bind="value: zipCode">
+                </div>
+                <div class="col-lg-3">
+                    <label for="housing">Housing Status</label>
+                    <select class="form-control" id="lstHousing" name="lstHousing" data-bind="options: lstHousing,
+                           value: housingStatus,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-3">
+                    <label for="risk">Risk Level</label>
+                    <select class="form-control" id="lstRiskLevels" name="lstRiskLevels" data-bind="options: lstRiskLevels,
+                           value: riskLevel,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+            <div class="row" data-bind="foreach: lstAlias">
+                <div class="col-lg-2">
+                    Alias:
+                </div>
+                <div class="col-lg-5 pull-left">
+                    <input type="text" class="form-control" data-bind="value: first" />
+                </div>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control" data-bind="value: last" />
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn-default" data-bind="click: addAlias">Add Alias</button>
+                <button class="btn-default" data-bind="click: removeAlias">Remove Last Alias</button>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <label for="race">Race</label>
+                    <select class="form-control" id="lstRace" name="lstRace" data-bind="options: lstRace,
+                           value: race,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-6">
+                    <label for="mname">Ethnicity</label>
+                    <select class="form-control" id="lstethinicity" name="lstethinicity" data-bind="options: lstethinicity,
+                           value: ethinicity,
+                           optionsCaption: 'Choose...'"></select>
+                </div>                
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="lstEnglish">English Fluency</label>
+                    <select class="form-control" id="lstEnglish" name="lstEnglish" data-bind="options: lstEnglish,
+                           value: englishFluency,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-4">
+                    <label for="lstHome">Home Language</label>
+                    <select class="form-control" id="lstHome" name="lstHome" data-bind="options: lstHome,
+                           value: homeLanguage,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-4">
+                    <label for="lstOtherL">Other Language</label>
+                    <input type="text" class="form-control" data-bind="value: otherLanguage"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="lstGender" name="lstGender" data-bind="options: lstGender,
+                           value: gender,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-6">
+                    <label for="gbt">GBT</label>
+                    <select class="form-control" id="gbt" name="gbt" data-bind="options: lstGbt,
+                           value: gbt,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="lstEStatus">Education Status</label>
+                    <select class="form-control" id="lstEStatus" name="lstEStatus" data-bind="options: lstEStatus,
+                           value: educationStatus,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-4">
+                    <label for="lstcurrGrade">Curr. Grade</label>
+                    <select class="form-control" id="lstcurrGrade" name="lstcurrGrade" data-bind="options: lstcurrGrade,
+                           value: currentGrade,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-4">
+                    <label for="lstEmpStatus">Employment Status</label>
+                    <select class="form-control" id="lstEmpStatus" name="lstEmpStatus" data-bind="options: lstEmpStatus,
+                           value: employmentStatus,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10">
+                    <label for="lstSchool">School</label>
+                    <select class="form-control" id="lstSchool" name="lstSchool" data-bind="options: lstSchool,
+                           value: school,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-2">
+                    <label for="lstSpecialNeed">Special Need</label>
+                    <select class="form-control" id="lstSpecialNeed" name="lstSpecialNeed" data-bind="event: { change: selectionChanged }, options: lstSpecialNeed,
+                           value: specialNeed,
+                           optionsCaption: 'Choose...' "></select>
+                </div>
+            </div>
+            <div class="row">
+                &nbsp;
+            </div>
+            <div class="row" data-bind="foreach: lstSpecialNeeds">
+                <div class="col-lg-2">
+                    Need:
+                </div>
+                <div class="col-lg-5">
+                    <select class="form-control" data-bind="options: $root.lstNeeds,
+                           value: need,
+                           optionsCaption: 'Choose...' "></select>
+                </div>
+                <div class="col-lg-5">
+                    <input type="text" class="form-control" data-bind="value: others" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <button class="btn-default" id="btnAddNeed" data-bind="click: addNeed" disabled="disabled">Add Special Need</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <label for="lstUser">User</label>
+                    <select class="form-control" id="lstUser" name="lstUser" data-bind="options: lstUser,
+                           value: user,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-6">
+                    <label for="intakeDate">Intake Date</label>
+                    <input type="text" class="form-control" id="intakeDate" name="intakeDate" data-bind="value: intakeDate"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <label for="lstClientStatus">Client Status</label>
+                    <select class="form-control" id="lstClientStatus" name="lstClientStatus" data-bind="options: lstClientStatus,
+                           value: clientStatus,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-4">
+                    <label for="lstReasons">Reason For Close</label>
+                    <select class="form-control" id="lstReasons" name="lstReasons" data-bind="options: lstReasons,
+                           value: reasonForClose,
+                           optionsCaption: 'Choose...'"></select>
+                </div>
+                <div class="col-lg-4">
+                    <label for="closeDate">Close Date</label>
+                    <input type="text" class="form-control" id="closeDate" name="closeDate" data-bind="value: closeDate">
+                </div>
+                <div class="row">
+                    &nbsp;
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button class="btn-default" data-bind="click: addClient">Add Client</button>
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+
+        
+    </form>
+</section>
